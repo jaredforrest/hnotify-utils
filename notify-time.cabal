@@ -1,0 +1,13 @@
+Name:                notify-time
+Version:             0.0
+Synopsis:            Notification of current time
+Description:         Sends a notification of the current
+                     time using dbus                     
+License:             GPL
+License-file:        LICENSE
+Author:              Jared Forrest
+Maintainer:          Jared Forrest <jared_forrest@mailbox.org>
+Build-Depends:       base fdo-notify
+
+Executable:          notify-time
+Main-is:             notify-time.hs
