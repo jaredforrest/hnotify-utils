@@ -1,6 +1,9 @@
+module Main where
+
 import Data.Time.LocalTime
 import Data.Time.Format
 import DBus.Notify
+
 main = do
  now <- getZonedTime
  client <- connectSession
