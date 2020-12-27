@@ -1,7 +1,7 @@
 # Maintainer: Jared Forrest <jared_forrest@mailbox.org>
 
 pkgname=hnotify-utils
-pkgver=0.1.0.2
+pkgver=0.1.0.0
 pkgrel=1
 pkgdesc="Simple haskell notification utilities"
 url="https://github.com/jaredforrest/${pkgname}"
