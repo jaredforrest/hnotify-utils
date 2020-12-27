@@ -1,7 +1,7 @@
 # Maintainer: Jared Forrest <jared_forrest@mailbox.org>
 
 pkgname=hnotify-utils
-pkgver=0.1.0.0
+pkgver=0.1.0.2
 pkgrel=1
 pkgdesc="Simple haskell notification utilities"
 url="https://github.com/jaredforrest/${pkgname}"
@@ -27,30 +27,30 @@ build() {
   cd "${pkgname}-${pkgver}"
 
   runhaskell Setup configure -O \
-    --disable-library-vanilla \
-    --docdir="/usr/share/doc/${pkgname}" \
-    --dynlibdir="/usr/lib" \
-    --enable-executable-dynamic \
     --enable-shared \
-    --enable-tests \
-    --libsubdir=\$compiler/site-local/\$pkgid \
+    --enable-executable-dynamic \
+    --disable-library-vanilla \
     --prefix="/usr" \
+    --docdir="/usr/share/doc/${pkgname}" \
+    --enable-tests \
+    --dynlibdir="/usr/lib" \
+    --libsubdir=\$compiler/site-local/\$pkgid \
     #--datasubdir="${pkgname}" \
     #--ghc-option=-optl-Wl\,-z\,relro\,-z\,now \
     #--ghc-option='-pie' \
 
   runhaskell Setup build
-  runhaskell Setup register --gen-script
-  runhaskell Setup unregister --gen-script
-  sed -i -r -e "s|ghc-pkg.*update[^ ]* |&'--force' |" register.sh
-  sed -i -r -e "s|ghc-pkg.*unregister[^ ]* |&'--force' |" unregister.sh
+  #runhaskell Setup register --gen-script
+  #runhaskell Setup unregister --gen-script
+  #sed -i -r -e "s|ghc-pkg.*update[^ ]* |&'--force' |" register.sh
+  #sed -i -r -e "s|ghc-pkg.*unregister[^ ]* |&'--force' |" unregister.sh
 }
 
 package() {
   cd "${pkgname}-${pkgver}"
 
-  install -D -m744 register.sh "${pkgdir}/usr/share/haskell/register/${pkgname}.sh"
-  install -D -m744 unregister.sh "${pkgdir}/usr/share/haskell/unregister/${pkgname}.sh"
+  #install -D -m744 register.sh "${pkgdir}/usr/share/haskell/register/${pkgname}.sh"
+  #install -D -m744 unregister.sh "${pkgdir}/usr/share/haskell/unregister/${pkgname}.sh"
   runhaskell Setup copy --destdir="${pkgdir}"
   install -D -m644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
   rm -f "${pkgdir}/usr/share/doc/${pkgname}/LICENSE"
