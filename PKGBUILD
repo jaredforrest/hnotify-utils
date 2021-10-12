@@ -1,4 +1,4 @@
-# Maintainer: Jared Forrest <jared_forrest@mailbox.org>
+# Maintainer: Jared Forrest <jared@jaredforrest.xyz>
 
 pkgname=hnotify-utils
 pkgver=0.1.0.0
