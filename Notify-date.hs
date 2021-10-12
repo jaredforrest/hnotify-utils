@@ -15,8 +15,9 @@ notifytime time = blankNote { summary=currdateshort time,
  body=(Just $ Text ("The current date is " ++ currdatelong time) ),
  appImage=(Just $ Icon "calendar") }
 
-currdatelong :: ZonedTime -> String
-currdatelong time = formatTime defaultTimeLocale "%c" time
-
 currdateshort :: ZonedTime -> String
-currdateshort time = formatTime defaultTimeLocale "%A %e %B %Y" time
+currdateshort time = formatTime defaultTimeLocale "%x" time
+
+currdatelong :: ZonedTime -> String
+currdatelong time = formatTime defaultTimeLocale "%A %e %B %Y" time
+
