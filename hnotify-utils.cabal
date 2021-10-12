@@ -26,6 +26,16 @@ executable notify-time
                      , fdo-notify >= 0.3.1
   -- hs-source-dirs:
   default-language:    Haskell2010
+  
+  executable notify-date
+  main-is:             Notify-date.hs
+  -- other-modules:
+  -- other-extensions:
+  build-depends:       base >= 4.9
+                     , time >= 1.9.3
+                     , fdo-notify >= 0.3.1
+  -- hs-source-dirs:
+  default-language:    Haskell2010
 
 executable notify-mail
   main-is:             Notify-mail.hs
