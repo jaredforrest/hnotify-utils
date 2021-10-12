@@ -27,7 +27,7 @@ executable notify-time
   -- hs-source-dirs:
   default-language:    Haskell2010
   
-  executable notify-date
+executable notify-date
   main-is:             Notify-date.hs
   -- other-modules:
   -- other-extensions:
