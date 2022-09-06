@@ -20,4 +20,4 @@ currdateshort :: ZonedTime -> String
 currdateshort time = formatTime defaultTimeLocale "%d/%m/%y" time
 
 currdatelong :: ZonedTime -> String
-currdatelong time = formatTime defaultTimeLocale "%A %e %B %Y" time
+currdatelong time = formatTime defaultTimeLocale "%A %-ze %B %Y" time
