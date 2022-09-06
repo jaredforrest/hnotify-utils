@@ -11,7 +11,8 @@ main = do
  return ()
 
 notifytime :: ZonedTime -> Note
-notifytime time = blankNote { summary=currdateshort time,
+notifytime time = blankNote { appName = "Date and Time",
+ summary=currdateshort time,
  body=(Just $ Text ("The current date is " ++ currdatelong time) ),
  appImage=(Just $ Icon "calendar") }
 
